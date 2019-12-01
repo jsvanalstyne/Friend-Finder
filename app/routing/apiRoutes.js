@@ -7,3 +7,4 @@ module.exports = function(app) {
     app.get("/api/friends", function(req, res) {
      return  res.json(friends);
     });}
+    // Create comparison of user to all of the freinds in the array. 
