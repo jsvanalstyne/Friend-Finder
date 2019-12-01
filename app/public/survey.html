@@ -18,6 +18,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
 
 </head>
 
@@ -29,13 +30,114 @@
         <form>
             <div class="form-group">
                 <h4>Name (Required)</h4>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" required>
             </div>
             <div class="form-group">
                 <h4>Link to Photo Image (Required)</h4>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="text" class="form-control" id="photo" required>
             </div>
         </form>
+        <hr>
+        <h3><strong>Question 1</strong></h3>
+        <h4>I prefer cats over dogs!</h4>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 2</strong></h3>
+        <h4>I enjoy being outside.</h4>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 3</strong></h3>
+        <h4>I like to travel as much as I can</h4>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 4</strong></h3>
+        <h4>Physical acitivity is not important to me. </h4>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 5</strong></h3>
+        <h4>I try to do as little as I can when I am not working. </h4>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 6</strong></h3>
+        <h4>I like to plan out my day as much as possible. </h4>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 7</strong></h3>
+        <h4>I prefer for others to make decisions for me.</h4>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 8</strong></h3>
+        <h4>Spending time with a lot of people can drain you.</h4>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 9</strong></h3>
+        <h4>I like to go dancing!</h4>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 10</strong></h3>
+        <h4>I prefer the mountains to the beach!</h4>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
         <hr>
         <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
         <hr>
@@ -43,9 +145,9 @@
     <footer>
         <div class="container">
             <p>
-            <a href="/api/friends">API Friends List</a>
-            | 
-            <a href="https://github.com/jsvanalstyne/Friend-Finder">GitHub Repo</a>
+                <a href="/api/friends">API Friends List</a>
+                |
+                <a href="https://github.com/jsvanalstyne/Friend-Finder">GitHub Repo</a>
             </p>
         </div>
     </footer>
