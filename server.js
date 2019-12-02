@@ -1,19 +1,18 @@
 var express = require("express");
 var path = require("path");
 var app= express();
-var bodyParser = require('body-parser');
-var router = express.Router();
+// var bodyParser = require('body-parser');
 var PORT = 3000;
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+// allows us to receive json objects(access to req.body)
+app.use(express.urlencoded({ extended: true }));
+// allows us to receive and send data through urls. (allows us :character req.params.name) 
 
 
-require(path.join(__dirname, './app/routing/htmlRoutues'))(app);
-require(path.join(__dirname, './app/routing/apiRoutes'))(app);
-// router.get("/")
-// app.get("/", function(req, res) {
-//     res.sendFile(path.join(__dirname, "home.html"));
-//   });
+require( './app/routing/htmlRoutues')(app);
+require( './app/routing/apiRoutes')(app);
+
+
 
 app.listen(PORT, function(){
     console.log("Port is listening on "+ PORT);

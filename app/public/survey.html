@@ -159,8 +159,8 @@
                     $("#q10").val().trim()
                 ]
             }
-        $.post("/api/friends", function(data){
-            
+        $.post("/api/friends", newFriend,  function(response){
+            console.log(response)
         })
         });
          
