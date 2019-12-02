@@ -141,7 +141,7 @@
         <hr>
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
         <script>
-        $("#sumbit").on("click", function(event){
+        $("#submit").on("click", function(event){
             event.preventDefault();
             var newFriend ={
                 name: $("#name").val().trim(),
@@ -159,7 +159,11 @@
                     $("#q10").val().trim()
                 ]
             }
+        $.post("/api/friends", function(data){
+            
         })
+        });
+         
         </script>
         <hr>
     </div>

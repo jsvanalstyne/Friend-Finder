@@ -8,3 +8,5 @@ module.exports = function(app) {
      return  res.json(friends);
     });}
     // Create comparison of user to all of the freinds in the array. 
+
+    
