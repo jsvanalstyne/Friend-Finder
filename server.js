@@ -1,7 +1,6 @@
 var express = require("express");
 var path = require("path");
 var app= express();
-// var bodyParser = require('body-parser');
 var PORT = 3000;
 app.use(express.json());
 // allows us to receive json objects(access to req.body)
