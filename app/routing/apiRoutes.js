@@ -10,8 +10,9 @@ module.exports = function (app) {
     app.post("/api/friends", function (req, res) {
         console.log(req.body)
         var newFriend = req.body;
-        var newFriendScores= parseInt(newFriend.scores);
-
+        
+        var newFriendScores= (newFriend.score);
+        console.log("line 13" + newFriendScores);
         // Compare the newFriend scores to all of the existing friends and return the friend with the best score. 
         var currentMatch;
         var currentScore = 50;
@@ -21,18 +22,24 @@ module.exports = function (app) {
             // Loop over the scores inside the current friend
             var friendObject = friends[i].score;
             // Get the difference between the two scores (current friend and new friend)
+            console.log("line 25" +friendObject);
             for (var j = 0; j < newFriendScores.length; j++) {
                 // increase var difference by difference of friends.
-                difference += Math.abs(friendObject[j] - newFriendScores[j]);
+                    console.log("line 28"  +newFriendScores[i]);
+                difference += Math.abs(parseInt(friendObject[j]) - parseInt(newFriendScores[j]));
+                console.log("LIne 30 " +difference);
             }
         }
         // Once this loop completes, compare the difference to currentScore
 
         if (difference < currentScore) {
+            console.log(newFriendScores[i]);
             currentMatch = newFriendScores[i];
             currentScore = difference;
         }
-        res.json(currentMatch);
+        console.log(currentMatch);
+        console.log("line 41 " +friends[currentMatch]);
+        res.json(friends[currentMatch]);
         friends.push(newFriend);
     })
 }
