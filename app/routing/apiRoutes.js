@@ -13,6 +13,9 @@ module.exports = function (app) {
         
         var newFriendScores= (newFriend.score);
         console.log("line 13" + newFriendScores);
+        for(var i=0; i<newFriendScores.length; i++){
+            console.log(newFriendScores[i]);
+        }
         // Compare the newFriend scores to all of the existing friends and return the friend with the best score. 
         var currentMatch;
         var currentScore = 50;
@@ -20,26 +23,26 @@ module.exports = function (app) {
         for (var i = 0; i < friends.length; i++) {
             var difference = 0;
             // Loop over the scores inside the current friend
-            var friendObject = friends[i].score;
+            var friendObjectScore = friends[i].score;
             // Get the difference between the two scores (current friend and new friend)
-            console.log("line 25" +friendObject);
-            for (var j = 0; j < newFriendScores.length; j++) {
+            console.log("line 25" +friendObjectScore);
+            for (var j = 0; j < friendObjectScore.length; j++) {
                 // increase var difference by difference of friends.
                     console.log("line 28"  +newFriendScores[i]);
-                difference += Math.abs(parseInt(friendObject[j]) - parseInt(newFriendScores[j]));
+                difference += Math.abs(parseInt(friendObjectScore[j]) - parseInt(newFriendScores[j]));
                 console.log("LIne 30 " +difference);
             }
-        }
+        
         // Once this loop completes, compare the difference to currentScore
 
         if (difference < currentScore) {
-            console.log(newFriendScores[i]);
-            currentMatch = newFriendScores[i];
+            currentMatch = friends[i];
             currentScore = difference;
         }
+    }
         console.log(currentMatch);
-        console.log("line 41 " +friends[currentMatch]);
-        res.json(friends[currentMatch]);
+        console.log("line 41 " + currentMatch);
+        res.json(currentMatch);
         friends.push(newFriend);
     })
 }
