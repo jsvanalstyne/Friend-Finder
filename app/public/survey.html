@@ -136,11 +136,24 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h3 class="modal-title">Besties!!</h1>
+                        <h3 class="modal-title">Welcome to BedRock!</h1>
                     </div>
                     <div class="modal-body">
                         <h2 id="bffname"></h2>
                         <img id="bffPhoto" src="#">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="noAnswerModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Please answer all questions and required fields!</h1>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -163,9 +176,6 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -182,33 +192,44 @@
         $("#submit").on("click", function (event) {
             console.log("clicked submit")
             event.preventDefault();
-            var newFriend = {
-                name: $("#name").val().trim(),
-                image: $("#image").val().trim(),
-                score: [
-                    $("#q1").val().trim(),
-                    $("#q2").val().trim(),
-                    $("#q3").val().trim(),
-                    $("#q4").val().trim(),
-                    $("#q5").val().trim(),
-                    $("#q6").val().trim(),
-                    $("#q7").val().trim(),
-                    $("#q8").val().trim(),
-                    $("#q9").val().trim(),
-                    $("#q10").val().trim()
-                ]
+            var valid = true;
+            if ($("#name").val() === "" || $("#image").val() === "") {
+                valid = false;
+            } else if ($("#q1").val() === "empty" || $("#q2").val() === "empty" || $("#q3").val() === "empty" || $("#q4").val() === "empty" || $("#q5").val() === "empty" || $("#q6").val() === "empty" || $("#q7").val() === "empty" || $("#q8").val() === "empty" || $("#q9").val() === "empty" || $("#q10").val() === "empty") {
+                valid = false;
             }
-            // console.log($("#image").prop('outerHTML'))
-            console.log(newFriend);
-            // var currentURL = window.location.origin;
-            $.post("/api/friends", newFriend, function (data) {
-                console.log(data)
-                $("#bffname").text(data.name);
-                console.log(data.name);
-                $("#bffPhoto").attr("src", data.image);
-                console.log(data.image);
-                $("#bestFriendModal").modal("toggle");
-            })
+            if (valid === true) {
+                var newFriend = {
+                    name: $("#name").val().trim(),
+                    image: $("#image").val().trim(),
+                    score: [
+                        $("#q1").val().trim(),
+                        $("#q2").val().trim(),
+                        $("#q3").val().trim(),
+                        $("#q4").val().trim(),
+                        $("#q5").val().trim(),
+                        $("#q6").val().trim(),
+                        $("#q7").val().trim(),
+                        $("#q8").val().trim(),
+                        $("#q9").val().trim(),
+                        $("#q10").val().trim()
+                    ]
+                }
+                // console.log($("#image").prop('outerHTML'))
+                console.log(newFriend);
+                // var currentURL = window.location.origin;
+                $.post("/api/friends", newFriend, function (data) {
+                    console.log(data)
+                    $("#bffname").text(data.name);
+                    console.log(data.name);
+                    $("#bffPhoto").attr("src", data.image);
+                    console.log(data.image);
+                    $("#bestFriendModal").modal("toggle");
+                })
+            } else {
+                // If a required field is missing, show alert
+                $("#noAnswerModal").modal("toggle");
+            }
         });
     });
 </script>
