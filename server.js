@@ -1,6 +1,6 @@
 var express = require("express");
 var app= express();
-var PORT = 3080;
+var PORT = process.env.PORT || 8080;
 app.use(express.static("public"));
 app.use(express.json());
 // allows us to receive json objects(access to req.body)
