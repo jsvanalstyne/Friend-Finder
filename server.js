@@ -1,7 +1,8 @@
 var express = require("express");
 var app= express();
 var PORT = process.env.PORT || 8080;
-app.use(express.static("public"));
+var path = require("path");
+app.use(express.static(path.join(__dirname, 'app/public')));
 app.use(express.json());
 // allows us to receive json objects(access to req.body)
 app.use(express.urlencoded({ extended: true }));

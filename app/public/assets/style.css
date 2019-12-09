@@ -1,3 +1,29 @@
 #homePage {
-    background-image: url("https://i.pinimg.com/originals/fc/9e/9b/fc9e9b38b0365d1df413614d8f945099.jpg");
+    width: 100%;
+    font-family: flintstones;
+    font-size: 20px;
+   
+    position: relative;
+    text-align: center;
+    color: black;
+
 }
+@font-face {
+    font-family: flintstones;
+    src: url(./PrehistoricCaveman-PRJ7.ttf)
+ }
+ .img{
+     max-width: 100%;
+     max-height: 100;
+     
+ }
+ .footers{
+    font-family: flintstones;
+    font-size: 10px; 
+ }
+ .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
