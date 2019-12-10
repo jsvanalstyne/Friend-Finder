@@ -24,7 +24,7 @@
 </head>
 
 <body class="body">
-    <button type="button" class="btn btn-dark themeSong">Play Theme Song</button>
+    <button type="button" class="btn btn-dark themeSong"data-audio-status="false">Play Theme Song</button>
     <div class="container" id="homePage">
         <!-- <audio id="themeSong" src="../assets/Flintstones.mp3" loop="loop" muted="muted"></audio> -->
 
@@ -67,12 +67,23 @@
 
 </body>
 <script type="text/javascript">
+var themePlaying =false;
     $(document).ready(function () {
         $(".themeSong").on("click", function (event) {
             var audio = document.createElement("AUDIO")
             document.body.appendChild(audio);
             audio.src = "./assets/Flintstones.mp3"
-            audio.play();
+            if(themePlaying==false){
+                audio.play();
+                themePlaying= true;
+            
+            }else if (themePlaying==true){
+                audio.pause();
+                themePlaying=false;
+            }else{
+                console.log("here")
+            }
+            
         });
     });
         
