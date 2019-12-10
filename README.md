@@ -4,6 +4,9 @@ Have you ever wondered who would be your perfect friend if you lived in Bedrock?
 # Live Link 
 [Flintstone Finder](https://mighty-castle-85539.herokuapp.com/)
 
+# Getting Started
+![Screenshot](/app/public/assets/screen.png)
+
 
 
 
