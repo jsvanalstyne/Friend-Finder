@@ -225,7 +225,7 @@
                 // var currentURL = window.location.origin;
                 $.post("/api/friends", newFriend, function (data) {
                     console.log(data)
-                    $("#bffname").text("Here is "+data.name);
+                    $("#bffname").text("Here is your Bedrock buddy, "+data.name);
                     console.log(data.name);
                     $("#bffPhoto").attr("src", data.image);
                     console.log(data.image);
