@@ -1,12 +1,33 @@
+html{
+    height: 100%;
+}
+
+.body{
+    background-image: url(./Bedrock.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 #homePage {
     width: 100%;
     font-family: flintstones;
     font-size: 20px;
-   
+    /* background-color: white; */
     position: relative;
     text-align: center;
-    color: black;
+    color: #5A539D;
 
+}
+.surveyTitles{
+    width: 100%;
+    font-family: flintstones;
+    font-size: 20px;
+    /* background-color: white; */
+    position: relative;
+    text-align: center;
+    color: #5A539D;
 }
 @font-face {
     font-family: flintstones;
@@ -27,3 +48,41 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .footers{
+    font-size: 15px;
+    position:fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    /* margin-right: 100px; */
+    
+  }
+  .surveyFooters{
+      font-size: 20px;
+      font-family: sans-serif;
+      text-align: center;
+      color: black;
+  }
+  .questions{
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+     0   -1px 0 #000,
+     1px -1px 0 #000,
+     1px  0   0 #000,
+     1px  1px 0 #000,
+     0    1px 0 #000,
+    -1px  1px 0 #000,
+    -1px  0   0 #000; 
+  }
+  #bffname{
+      text-align: center !important;
+  }
+  #bffPhoto{
+    text-align: center;
+  }
+  .modal-body > .img-responsive {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

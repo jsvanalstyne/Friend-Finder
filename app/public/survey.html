@@ -8,18 +8,21 @@
     <title>Survey Questions</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
 
 
 </head>
 
-<body>
+<body class="body">
     <div class="container">
+        <div class="surveyTitles">
         <h1>Survey Questions</h1>
         <hr>
-        <h2><strong>About You</strong></h2>
+        <h2><strong>Tell us about yourself!</strong></h2>
+    </div>
         <form>
             <div class="form-group">
-                <h4>Name (Required)</h4>
+
                 <input type="text" class="form-control" id="name" placeholder="Name (Required)" required>
             </div>
             <div class="form-group">
@@ -27,149 +30,151 @@
             </div>
         </form>
         <hr>
-        <h3><strong>Question 1</strong></h3>
-        <h4>I prefer cats over dogs!</h4>
-        <select class="chosen-select" id="q1">
-            <option value="">Select an option</option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
-        <h3><strong>Question 2</strong></h3>
-        <h4>I enjoy being outside.</h4>
-        <select class="chosen-select" id="q2">
-            <option value="">Select an option</option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
-        <h3><strong>Question 3</strong></h3>
-        <h4>I like to travel as much as I can</h4>
-        <select class="chosen-select" id="q3">
-            <option value="">Select an option</option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
-        <h3><strong>Question 4</strong></h3>
-        <h4>Physical acitivity is not important to me. </h4>
-        <select class="chosen-select" id="q4">
-            <option value="">Select an option</option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
-        <h3><strong>Question 5</strong></h3>
-        <h4>I try to do as little as I can when I am not working. </h4>
-        <select class="chosen-select" id="q5">
-            <option value="">Select an option</option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
-        <h3><strong>Question 6</strong></h3>
-        <h4>I like to plan out my day as much as possible. </h4>
-        <select class="chosen-select" id="q6">
-            <option value="">Select an option</option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
-        <h3><strong>Question 7</strong></h3>
-        <h4>I prefer for others to make decisions for me.</h4>
-        <select class="chosen-select" id="q7">
-            <option value="">Select an option</option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
-        <h3><strong>Question 8</strong></h3>
-        <h4>Spending time with a lot of people can drain you.</h4>
-        <select class="chosen-select" id="q8">
-            <option value="">Select an option</option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
-        <h3><strong>Question 9</strong></h3>
-        <h4>I like to go dancing!</h4>
-        <select class="chosen-select" id="q9">
-            <option value="">Select an option</option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
-        <h3><strong>Question 10</strong></h3>
-        <h4>I prefer the mountains to the beach!</h4>
-        <select class="chosen-select" id="q10">
-            <option value="">Select an option</option>
-            <option value="1">1 (Strongly Disagree)</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree)</option>
-        </select>
-        <hr>
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit Survey</button>
-
-        <hr>
-        <div id="bestFriendModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h3 class="modal-title">Welcome to BedRock!</h1>
-                    </div>
-                    <div class="modal-body">
-                        <h2 id="bffname"></h2>
-                        <img id="bffPhoto" src="#">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+        <div class="questions">
+            <h3><strong>Question 1</strong></h3>
+            <h4>I prefer cats over dogs!</h4>
+            <select class="chosen-select" id="q1">
+                <option value="">Select an option</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <h3><strong>Question 2</strong></h3>
+            <h4>I enjoy being outside.</h4>
+            <select class="chosen-select" id="q2">
+                <option value="">Select an option</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <h3><strong>Question 3</strong></h3>
+            <h4>I like to travel as much as I can</h4>
+            <select class="chosen-select" id="q3">
+                <option value="">Select an option</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <h3><strong>Question 4</strong></h3>
+            <h4>Physical acitivity is not important to me. </h4>
+            <select class="chosen-select" id="q4">
+                <option value="">Select an option</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <h3><strong>Question 5</strong></h3>
+            <h4>I try to do as little as I can when I am not working. </h4>
+            <select class="chosen-select" id="q5">
+                <option value="">Select an option</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <h3><strong>Question 6</strong></h3>
+            <h4>I like to plan out my day as much as possible. </h4>
+            <select class="chosen-select" id="q6">
+                <option value="">Select an option</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <h3><strong>Question 7</strong></h3>
+            <h4>I prefer for others to make decisions for me.</h4>
+            <select class="chosen-select" id="q7">
+                <option value="">Select an option</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <h3><strong>Question 8</strong></h3>
+            <h4>Spending time with a lot of people can drain you.</h4>
+            <select class="chosen-select" id="q8">
+                <option value="">Select an option</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <h3><strong>Question 9</strong></h3>
+            <h4>I like to go dancing!</h4>
+            <select class="chosen-select" id="q9">
+                <option value="">Select an option</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <h3><strong>Question 10</strong></h3>
+            <h4>I prefer the mountains to the beach!</h4>
+            <select class="chosen-select" id="q10">
+                <option value="">Select an option</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <hr>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit Survey</button>
+        </div>
+    </div>
+    <hr>
+    <div id="bestFriendModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                    <h3 class="modal-title"style="margin: 0 auto;">Welcome to BedRock!</h1>
+                </div>
+                <div class="modal-body">
+                    <h2 id="bffname"></h2>
+                    <img id="bffPhoto" src="#">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-        <div id="noAnswerModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h3 class="modal-title">Please answer all questions and required fields!</h1>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+    </div>
+    <div id="noAnswerModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Please answer all questions and required fields!</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-        <footer>
-            <div class="container">
-                <p>
-                    <a href="/api/friends">API Friends List</a>
-                    |
-                    <a href="https://github.com/jsvanalstyne/Friend-Finder">GitHub Repo</a>
-                </p>
-            </div>
-        </footer>
+    </div>
+    <footer>
+        <div class="container surveyFooters">
+            <p>
+                <a href="/api/friends">API Friends List</a>
+                |
+                <a href="https://github.com/jsvanalstyne/Friend-Finder">GitHub Repo</a>
+            </p>
+        </div>
+    </footer>
     </div>
 
 
@@ -220,7 +225,7 @@
                 // var currentURL = window.location.origin;
                 $.post("/api/friends", newFriend, function (data) {
                     console.log(data)
-                    $("#bffname").text(data.name);
+                    $("#bffname").text("Here is "+data.name);
                     console.log(data.name);
                     $("#bffPhoto").attr("src", data.image);
                     console.log(data.image);
