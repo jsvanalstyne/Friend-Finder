@@ -24,7 +24,8 @@
 </head>
 
 <body class="body">
-    <button type="button" class="btn btn-dark themeSong"data-audio-status="false">Play Theme Song</button>
+    <button type="button" class="btn btn-dark themeSong" data-audio-status="paused" id="themeSong">Play Theme
+        Song</button>
     <div class="container" id="homePage">
         <!-- <audio id="themeSong" src="../assets/Flintstones.mp3" loop="loop" muted="muted"></audio> -->
 
@@ -60,33 +61,40 @@
         crossorigin="anonymous"></script>
     <!-- <svg class="bi bi-volume-up" width="32" height="32" viewBox="0 0 20 20" fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"> -->
-        <!-- <path fill-rule="evenodd"
+    <!-- <path fill-rule="evenodd"
             d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"
             clip-rule="evenodd" /></svg> -->
 
 
 </body>
 <script type="text/javascript">
-var themePlaying =false;
+    var themePlaying = false;
     $(document).ready(function () {
-        $(".themeSong").on("click", function (event) {
+        console.log(themePlaying);
+        $("#themeSong").on("click", function (event) { 
             var audio = document.createElement("AUDIO")
             document.body.appendChild(audio);
             audio.src = "./assets/Flintstones.mp3"
-            if(themePlaying==false){
+            audio.id= "audioId"
+            if (!themePlaying) {
                 audio.play();
-                themePlaying= true;
-            
-            }else if (themePlaying==true){
-                audio.pause();
-                themePlaying=false;
-            }else{
-                console.log("here")
+                $(this).attr("data-audio-status", "playing");
+                themePlaying = true;
+                console.log(themePlaying);
+            } else  {
+                document.getElementById("audioId").pause();
+                // audio.pause();
+                $(this).attr("data-audio-status", "paused")
+                console.log("after changing to pause")
+                
+                console.log()
+                themePlaying = false;
+                console.log(themePlaying);
             }
-            
+
         });
     });
-        
+
 </script>
 
 </html>
